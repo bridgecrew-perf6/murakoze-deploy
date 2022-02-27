@@ -14,7 +14,7 @@ pipeline {
             steps { 
                 sh "mkdir -p $GOPATH/src/github.com/nzajos-org/murakoze"
                 dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-                    git url: 'github.com/nzajos-org/murakoze.git', branch: 'main'
+                    git url: 'github.com/nzajos-org/murakoze.git', credentialsId: 'none', branch: 'main'
                 }
             }
         }
