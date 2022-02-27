@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: murakoze
+  labels:
+    app: murakoze
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: murakoze.com
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 8000
+    protocol: TCP
+  selector:
+    app: murakoze
