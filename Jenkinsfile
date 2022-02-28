@@ -14,7 +14,7 @@ pipeline {
             steps { 
                 sh "mkdir -p $GOPATH/src/github.com/nzajos-org/murakoze"
                 dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-                    git url: 'github.com/nzajos-org/murakoze.git', credentialsId: 'Jenkins-nzajos-org', branch: 'main'
+                    git url: 'github.com/nzajos-org/murakoze.git', credentialsId: 'murakoze_deploy', branch: 'main'
                 
                 }
             }
