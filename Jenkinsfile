@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-                    sh "go get ./..."
+                    sh "go install ."
                     sh "go build"
                 }
             }
