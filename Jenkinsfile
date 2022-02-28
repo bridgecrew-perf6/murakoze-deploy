@@ -12,6 +12,7 @@ pipeline {
         PATH="$PATH:/usr/lib/go-1.9/bin"
         GOPATH="$WORKSPACE"
         GO117MODULE = 'on'
+        ENV CGO_ENABLED 0
     }
     stages {
         stage('Checkout') {
