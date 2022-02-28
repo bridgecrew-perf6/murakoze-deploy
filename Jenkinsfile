@@ -4,10 +4,14 @@ pipeline {
         timestamps()
         timeout(time: 1, unit: 'HOURS')
     }
+    tools{
+        go 'go-1.17'
+    }
     environment { 
         image_name = "myproj/nzajos-org/murakoze:1.0"
         PATH="$PATH:/usr/lib/go-1.9/bin"
         GOPATH="$WORKSPACE"
+        GO117MODULE = 'on'
     }
     stages {
         stage('Checkout') {
@@ -21,8 +25,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-                    sh "go get ./..."
+                dir("$GOPATH/src/github.com/nzajos-org/murakoze") { 
                     sh "go build"
                 }
             }
