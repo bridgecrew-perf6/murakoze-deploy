@@ -30,13 +30,13 @@ pipeline {
                 }
             }
         }
-        // stage('Test') {
-        //     steps {
-        //         dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-        //             sh "go test"
-        //         }
-        //     }
-        // }
+        stage('Test') {
+            steps {
+                // dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
+                //     sh "go test"
+                // }
+            }
+        }
         stage('Package') {
             steps {
                sh "docker build . -t ${image_name}"
