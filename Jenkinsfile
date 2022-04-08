@@ -11,8 +11,9 @@ pipeline {
         image_name = "myproj/nzajos-org/murakoze:1.0"
         PATH="$PATH:/usr/lib/go-1.9/bin"
         GOPATH="$WORKSPACE"
-        GO117MODULE = 'on' 
+        GO117MODULE = 'off' 
     }
+    
     stages {
         stage('Checkout') {
             steps { 
