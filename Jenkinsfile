@@ -11,7 +11,7 @@ pipeline {
         image_name = "myproj/nzajos-org/murakoze:1.0"
         PATH="$PATH:/usr/lib/go-1.9/bin"
         GOPATH="$WORKSPACE"
-        GO117MODULE = 'on'
+        GO117MODULE = 'on' 
     }
     stages {
         stage('Checkout') {
@@ -30,13 +30,13 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
-            steps {
-                dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
-                    sh "go test"
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         dir("$GOPATH/src/github.com/nzajos-org/murakoze") {
+        //             sh "go test"
+        //         }
+        //     }
+        // }
         stage('Package') {
             steps {
                sh "docker build . -t ${image_name}"
