@@ -38,6 +38,7 @@ pipeline {
         //         }
         //     }
         // }
+        //test
         stage('Package') {
             steps {
                sh "docker build . -t ${image_name}"
