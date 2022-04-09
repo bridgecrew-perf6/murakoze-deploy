@@ -38,7 +38,7 @@ pipeline {
         //         }
         //     }
         // }
-        //test ok
+        //test okk
         stage('Package') {
             steps {
                sh "docker build . -t ${image_name}"
